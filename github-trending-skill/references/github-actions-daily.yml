@@ -1,0 +1,35 @@
+name: GitHub Trending Daily Overview
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trending:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch GitHub Trending data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: pwsh
+        run: |
+          mkdir -p data
+          ./github-trending-skill/scripts/fetch_github_trending.ps1 `
+            -Since daily `
+            -Limit 10 `
+            -Output data/github-trending-daily.json
+
+      - name: Commit trending snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/github-trending-daily.json
+          git diff --cached --quiet || git commit -m "Update GitHub Trending daily snapshot"
+          git push
