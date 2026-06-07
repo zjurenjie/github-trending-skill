@@ -28,16 +28,37 @@ Answer first:
 
 ## Project Sections
 
-For each project:
+For each project, use the same itemized framework. Keep every item concise and grounded in repository metadata or README content.
 
 ### 1. owner/repo
 
-- Link:
-- Stars today:
-- Language:
-- Topics:
+- 项目链接:
+- Star 增长与基础数据:
+  - Stars today:
+  - Total stars:
+  - Forks:
+  - License:
+- 技术标签:
+  - Primary language:
+  - Topics:
 
-**是什么：** Summarize the project in 2-3 sentences.
+**项目定位：**
+
+- What problem it solves:
+- Project category:
+- One-sentence summary:
+
+**核心能力：**
+
+- Capability 1
+- Capability 2
+- Capability 3
+
+**技术特点：**
+
+- Implementation detail or architecture signal from README
+- Framework, model, protocol, API, or integration point when available
+- Note "信息有限" if the repository does not provide enough detail
 
 **使用场景：**
 
@@ -45,9 +66,21 @@ For each project:
 - Concrete scenario 2
 - Concrete scenario 3
 
-**相关领域：** Domain labels separated by commas.
+**适合人群：**
 
-**为什么值得关注：** Explain the trend signal in one concise sentence.
+- Developer, team, or organization profile most likely to benefit
+
+**相关领域：**
+
+- Domain labels separated by commas
+
+**为什么值得关注：**
+
+- Explain the current trend signal in one concise sentence.
+
+**评估建议：**
+
+- Mention maturity, maintenance, security, ecosystem fit, or adoption caveats developers should check before use.
 
 ## Cross-Project Trend Analysis
 
